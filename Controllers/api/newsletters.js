@@ -1,0 +1,3 @@
+/*
+- Newsletter page creation GET
+ */
