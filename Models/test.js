@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../Config/connection');
 
 // Create a new Sequelize model for books
 class Book extends Model {}
