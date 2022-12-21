@@ -4,6 +4,6 @@ const router = require('express').Router();
 
 const emailRoutes = require('./api/emails');
 
-router.use('/', emailRoutes)
+router.use('/emails', emailRoutes);
 
 module.exports = router;

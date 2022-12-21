@@ -1,1 +1,0 @@
-//newsletter creation GET
