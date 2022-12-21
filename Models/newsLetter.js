@@ -1,31 +1,21 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../Config/connection');
 
-// Create a new Sequelize model for books
-class Book extends Model {}
+// Create a new Sequelize model for newsLetter
+class newsLetter extends Model {}
 
-Book.init(
+newsLetter.init(
   // Define fields/columns on model
   // An `id` is automatically created by Sequelize, though best practice would be to define the primary key ourselves
   {
-    title: {
+    email: {
       type: DataTypes.STRING
     },
-    author: {
+    first_name: {
       type: DataTypes.STRING
     },
-    isbn: {
+    last_name: {
       type: DataTypes.STRING
-    },
-    pages: {
-      type: DataTypes.INTEGER
-    },
-    edition: {
-      type: DataTypes.INTEGER
-    },
-    // Will become `is_paperback` in table due to `underscored` flag
-    isPaperback: {
-      type: DataTypes.BOOLEAN
     }
   },
   {
@@ -34,8 +24,8 @@ Book.init(
     // Set to false to remove `created_at` and `updated_at` fields
     timestamps: true,
     underscored: true,
-    modelName: 'book'
+    modelName: 'news letter'
   }
 );
 
-module.exports = Book;
+module.exports = newsLetter;
