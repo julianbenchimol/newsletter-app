@@ -1,5 +1,6 @@
 const express = require('express');
 const sequelize = require('./config/connection');
+const mysql2 = require('mysql2');
 
 // Import model to sync table with database
 const emails = require('./Models/emails');
