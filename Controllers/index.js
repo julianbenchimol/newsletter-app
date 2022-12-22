@@ -2,8 +2,7 @@
 //- Dashboard page GET
 const router = require('express').Router();
 
-const emailRoutes = require('./api/emails');
+const apiRoutes = require('./api');
 
-router.use('/emails', emailRoutes);
-
+router.use('/api', apiRoutes);
 module.exports = router;
