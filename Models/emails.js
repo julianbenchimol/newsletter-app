@@ -8,17 +8,17 @@ Emails.init(
   // Define fields/columns on model
   // An `id` is automatically created by Sequelize, though best practice would be to define the primary key ourselves
   {
-    font: {
+    title: {
       type: DataTypes.STRING
     },
     header_image: {
-      type: DataTypes.STRING
+      type: DataTypes.BOOLEAN
     },
     // html link to video
     link: {
       type: DataTypes.STRING
     },
-    title: {
+    font: {
       type: DataTypes.STRING
     },
   },
