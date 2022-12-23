@@ -1,6 +1,3 @@
-/* 
-- Remove emails from database DELETE
-*/
 const router = require('express').Router();
 const emails = require('../../Models/emails.js')
 
