@@ -1,8 +1,10 @@
 //Login logout routes
+//Main page routes
 const router = require('express').Router();
 
-router.get('/', (req, res) =>{
-    res.render('main');
+//GET route for main page
+router.get('/', async (req, res) =>{
+    res.render('main')
 })
 
-module.export = router;
+module.exports = router;
