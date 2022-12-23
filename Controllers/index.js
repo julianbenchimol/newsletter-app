@@ -1,12 +1,14 @@
+
 //- Landing page GET
 //- Dashboard page GET
-const router = require("express").Router();
 
-const emailRoutes = require("./api/emails");
+const router = require('express').Router();
 
-router.use("/emails", emailRoutes);
 
-const apiRoutes = require('./api');
+const emailRoutes = require('./api/emails');
+const userRoutes = require('./user-routes')
 
-router.use('/api', apiRoutes);
+router.use('/api', emailRoutes);
+router.use('/', userRoutes);
+
 module.exports = router;
