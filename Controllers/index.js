@@ -1,9 +1,9 @@
-//- Landing page GET
-//- Dashboard page GET
-const router = require("express").Router();
+const router = require('express').Router();
 
-const emailRoutes = require("./api/emails");
+const emailRoutes = require('./api/emails');
+const userRoutes = require('./user-routes.js')
 
-router.use("/emails", emailRoutes);
+router.use('/api', emailRoutes);
+router.use('/', userRoutes);
 
 module.exports = router;
