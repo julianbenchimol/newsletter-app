@@ -23,13 +23,13 @@ Emails.init(
       type: DataTypes.STRING
     },
     header_image: {
-      type: DataTypes.STRING
+      type: DataTypes.BOOLEAN
     },
     // html link to video
     link: {
       type: DataTypes.STRING
     },
-    title: {
+    font: {
       type: DataTypes.STRING
     },
   },
