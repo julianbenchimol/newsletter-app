@@ -26,7 +26,7 @@ function writeNewsletter() {
 function submitForm(event) {
     event.preventDefault();
 
-    
+    writeNewsletter();
 
 }
 
