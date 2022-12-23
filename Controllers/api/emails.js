@@ -46,4 +46,5 @@ router.put('/emails/:id', async (req, res)=>{
 router.delete('/emails/:id', (req, res)=>{
     
 })
+
 module.exports = router;
