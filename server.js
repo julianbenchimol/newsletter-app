@@ -15,7 +15,7 @@ const sess = {
 }
 
 const hbs = exphbs.create({});
-app.engine('handlears', hbs.engine);
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 

@@ -29,9 +29,6 @@ Emails.init(
     link: {
       type: DataTypes.STRING
     },
-    font: {
-      type: DataTypes.STRING
-    },
   },
   {
     // Link to database connection
