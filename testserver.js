@@ -10,4 +10,4 @@ app.get('/', function (req, res) {
     res.render('main');
 });
 
-app.listen(3000);
+app.listen(PORT, () =>{console.log('Now Listening')})
