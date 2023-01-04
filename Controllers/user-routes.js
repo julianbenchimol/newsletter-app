@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 //GET route for main page
 router.get('/', async (req, res) =>{
-    res.render('main')
+    res.render('login', {})
 })
 
 module.exports = router;
