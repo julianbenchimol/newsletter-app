@@ -17,7 +17,8 @@ const sess = {
 const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set( __dirname + './views');
+//app.set( 'views', path.join(__dirname + '/views'));
+
 
 app.use(session(sess));
 app.use(routes);

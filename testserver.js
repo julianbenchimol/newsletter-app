@@ -1,13 +1,20 @@
-var express = require('express');
-var exphbs  = require('express-handlebars');
+const express = require('express');
+const exphbs = require('express-handlebars');
 
-var app = express();
+const app = express();
+const PORT = 3000;
 
-app.engine('handlebars', exphbs);
+const hbs = exphbs.create({})
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.get('/', function (req, res) {
-    res.render('main');
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(PORT, () =>{console.log('Now Listening')})
+app.get('/', (req, res)=>{
+    res.render('main')
+})
+
+app.listen(PORT, ()=>{
+    console.log(`app listening`)
+})
