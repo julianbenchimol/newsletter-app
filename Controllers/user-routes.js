@@ -3,8 +3,9 @@
 const router = require("express").Router();
 
 //GET route for main page
-router.get("/", async (req, res) => {
-  res.render("mainpage");
-});
+
+router.get('/', async (req, res) =>{
+    res.render('mainpage')
+})
 
 module.exports = router;
