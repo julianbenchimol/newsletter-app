@@ -1,12 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../Config/connection');
+const bycrypt = require('bcrypt');
 
-// Create a new Sequelize model for emails
-class User extends Model {}
+class User extends Model {
+  checkPassword(loginPw){
+    return bycrypt.compareSync(loginPw, this.password)
+  }
+}
 
 User.init(
-  // Define fields/columns on model
-  // An `id` is automatically created by Sequelize, though best practice would be to define the primary key ourselves
   {
 
     id: {
