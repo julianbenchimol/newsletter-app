@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../Config/connection');
+const sequelize = require('../config/connection');
 
 // Create a new Sequelize model for emails
 class Emails extends Model {}
@@ -33,7 +33,7 @@ Emails.init(
   },
   {
     // Link to database connection
-    sequelize,
+    sequelize: sequelize,
     // Set to false to remove `created_at` and `updated_at` fields
     timestamps: true,
     underscored: true,

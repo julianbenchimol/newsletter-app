@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../Config/connection');
+const sequelize = require('../config/connection');
 
 // Create a new Sequelize model for newsLetter
 class newsLetter extends Model {}
@@ -24,7 +24,7 @@ newsLetter.init(
     // Set to false to remove `created_at` and `updated_at` fields
     timestamps: true,
     underscored: true,
-    modelName: 'news letter'
+    modelName: 'newsletter'
   }
 );
 
