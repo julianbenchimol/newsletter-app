@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../Config/connection');
+const sequelize = require('../config/connection');
 
 // Create a new Sequelize model for emails
 class Emails extends Model {}
