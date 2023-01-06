@@ -1,0 +1,8 @@
+1/ user navigates to page and is presented with login page
+2/ user signs in with email and password. if email and password do not exist in the database, it creates one for the user. the email saved will be used consistently in the "FROM: " parameter in the mailOptions object in the nodemailer app file.
+3/ after successful sign in/up user is presented with profile page including: view sent newsletters, view email list, create new newsletter.
+4/ when view sent newsletters is clicked, user is taken to page where saved newsletters are organized by date created with back button.
+5/ when view email list is clicked, user is presented with list of emails and button with option to add new email to list, which adds the inputted email to an emailList array. this array will be used in the "TO: " parameter of the mailOptions object in the nodemailer app file.
+6/ when create new newsletter is clicked, user is taken to newsletter.handlebars page with form, which should be submitted. 
+7/ when submitted the inputted answers given on the form should populate a new mailOptions object. 
+8/ once newsletter is sent, it should be received at the address(es) given in the TO: parameter of the mailOptions.
