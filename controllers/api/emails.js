@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const emails = require('../../models/emails.js')
+//const {Emails} = require('../../models')
 
 
 //gets all emails 
