@@ -1,25 +1,16 @@
-const sequelize = require('../config/connection');
-const { User, Newsletter } = require('../models');
-
+const sequelize = require('../Config/connection')
+const User = require('../models/user')
 const userData = require('./userData.json');
-const newsletterData = require('./newsletterData.json');
 
-const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+const seedDatabase = async ()=>{
+  await sequelize.synnc({force:true})
 
-  const users = await User.bulkCreate(userData, {
+  await User.bulkCreate(userData, {
     individualHooks: true,
-    returning: true,
+    returning: true
   });
 
-  for (const newsletter of newsletterData) {
-    await Newsletter.create({
-      ...newsletter,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
-
-  process.exit(0);
-};
+  process.exit(0)
+}
 
 seedDatabase();
