@@ -24,7 +24,7 @@ newsLetter.init(
     // Set to false to remove `created_at` and `updated_at` fields
     timestamps: true,
     underscored: true,
-    modelName: 'news letter'
+    modelName: 'newsletter'
   }
 );
 

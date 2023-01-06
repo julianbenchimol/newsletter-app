@@ -1,16 +1,15 @@
-const sequelize = require('../Config/connection')
 const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../Config/connection')
 const bycrypt = require('bcrypt');
 
 class User extends Model {
-  checkPassword(loginPw){
-    return bycrypt.compareSync(loginPw, this.password)
-  }
+  // checkPassword(loginPw){
+  //   return bycrypt.compareSync(loginPw, this.password)
+  // }
 }
 
 User.init(
   {
-
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -29,21 +28,21 @@ User.init(
       }
     }
   },
-  {
-    hooks: {
-      beforeCreate: async(newUserData) =>{
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData
-      }
-    }
-  },
+  // {
+  //   hooks: {
+  //     beforeCreate: async(newUserData) =>{
+  //       newUserData.password = await bcrypt.hash(newUserData.password, 10);
+  //       return newUserData
+  //     }
+  //   }
+  // },
   {
     // Link to database connection
-    sequelize,
-    // Set to false to remove `created_at` and `updated_at` fields
-    timestamps: true,
+    sequelize: sequelize,
+    timestamps: false,
+    freezeTableName: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'User'
   }
 );
 

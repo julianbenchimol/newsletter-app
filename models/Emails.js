@@ -33,7 +33,7 @@ Emails.init(
   },
   {
     // Link to database connection
-    sequelize,
+    sequelize: sequelize,
     // Set to false to remove `created_at` and `updated_at` fields
     timestamps: true,
     underscored: true,
