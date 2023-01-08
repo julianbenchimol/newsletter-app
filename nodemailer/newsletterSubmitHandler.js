@@ -7,41 +7,27 @@ const imageSrc = document.getElementById("imageSrc");
 const submitBtn = document.getElementById("submitForm");
 
 function writeNewsletter() {
-
-   const newsletterHTML = `<div><img src="${imageSrc}">
-   \n<p>To: ${emailTo}</p>
-   \n<p>From: ${emailFrom}</p>
-   \n<p>Subject: ${subject}</p>
-    </div>
-    \n
-    \n<div><h2>${title}</h2>
-    \n<p>${message}</p>   
+   const newsletter =  
+   `<div><p>To: ${emailTo}</p>\n
+    <p>From: ${emailFrom}</p>\n
+    <p>Subject: ${subject}</p>
+    </div>\n\n
+    <div>
+    <h2>${title}</h2>\n
+    <p>${message}</p>\n
+    <img src="${imageSrc}"
     </div>`;
 
-    console.log(emailTo, /*The email from field should be the email of the user logged in */, subject, title, message, newsletterHTML);
-
-    const newsletterObj = {
-        'To': emailTo, //an array of subscribers
-        'From': '', //user logged in,
-        'Subject': subject,
-        'Text': message,
-        'HTML': newsletterHTML
-    }
-
-    return newsletterObj;
+    console.log(newsletter);
 }
 
-function submitNewsletter(event) {
+function submitForm(event) {
     event.preventDefault();
 
     writeNewsletter();
 
 }
 
-submitBtn.onclick(submitNewsletter);
-
-module.exports = submitNewsletter;
-
-
+submitBtn.onclick(submitForm);
 
 
