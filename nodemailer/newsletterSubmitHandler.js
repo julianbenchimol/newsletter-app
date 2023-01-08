@@ -1,6 +1,5 @@
 const emailTo = document.getElementById("emailTo").val().trim();
 const emailFrom = document.getElementById("emailFrom").val().trim();
-const cc = document.getElementById("cc").val().trim();
 const subject = document.getElementById("subject").val().trim();
 const title = document.getElementById("title").val().trim();
 const message = document.getElementById("messageText").val().trim();
@@ -11,7 +10,6 @@ function writeNewsletter() {
    const newsletter =  
    `<div><p>To: ${emailTo}</p>\n
     <p>From: ${emailFrom}</p>\n
-    <p>CC: ${cc}</p>\n\n
     <p>Subject: ${subject}</p>
     </div>\n\n
     <div>
