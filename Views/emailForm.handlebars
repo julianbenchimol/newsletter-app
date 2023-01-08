@@ -10,19 +10,15 @@
 
         <form class="form new-email-form">
             <div class="form-group">
-                <label for="email-name">email name:</label>
-                <input class="form-input" type="text" id="email-name" name="email-name" />
+                <label for="email-subject"></label>
+                <input type="text" class="form-input" id="email-subject" name="email-subject"></input>
+            </div>
+                 <div class="form-group">
+                <label for="email-content"></label>
+                <textarea type="text" class="form-input" id="email-content" name="email-content"></textarea>
             </div>
             <div class="form-group">
-                <label for="subscribers">needed funding ($):</label>
-                <input class="form-input" type="number" id="project-funding" name="project-funding" />
-            </div>
-            <div class="form-group">
-                <label for="project-desc">description:</label>
-                <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Create Newsletter</button>
             </div>
         </form>
     </div>
