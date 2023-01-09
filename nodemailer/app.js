@@ -1,5 +1,5 @@
 require('dotenv').config();
-const newsletterSubmission = require('.newsletterSubmitHandler');
+
 const nodemailer = require('nodemailer');
 
 //Creates a connection between an email service and the application, with authorization.
@@ -23,7 +23,3 @@ let transporter = nodemailer.createTransport({
       subject: 'Nodemailer Project',
       text: 'Hi from your nodemailer project'
     };
-
-    transporter.sendMail(mailOptions, () => {
-
-    })

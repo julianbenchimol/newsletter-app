@@ -40,30 +40,16 @@ function writeNewsletter() {
      </body>
    </html>`;
 
-    console.log(emailTo, /*The email from field should be the email of the user logged in */, subject, title, message, newsletterHTML);
-
-    const newsletterObj = {
-        'To': emailTo, //an array of subscribers
-        'From': '', //user logged in,
-        'Subject': subject,
-        'Text': message,
-        'HTML': newsletterHTML
-    }
-
-    return newsletterObj;
+    console.log(newsletter);
 }
 
-function submitNewsletter(event) {
+function submitForm(event) {
     event.preventDefault();
 
     writeNewsletter();
 
 }
 
-submitBtn.onclick(submitNewsletter);
-
-module.exports = submitNewsletter;
-
-
+submitBtn.onclick(submitForm);
 
 
