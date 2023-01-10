@@ -10,7 +10,7 @@
     // {
           
     function sendMail() {
-        const emailList = ["john.ifert.miller@gmail.com", "legendary6615@gmail.com", "jbenchimol1999@gmail.com"];
+        const emailList = ["john.ifert.miller@gmail.com"];
     for (let index = 0; index < emailList.length; index++) {
         // set to variable
     const email = emailList[index];
@@ -21,9 +21,11 @@
       message: "test"
       };
       emailjs.send( 'service_oqqo64j', 'template_7rezunv', params).then(function (res) {});
-    } else {
+      
+    } else { 
       alert('Failed to send email!')
     }
+    alert('Emails sent!')
 }
     };
     document.querySelector("#sendtocontacts").addEventListener("click", sendMail);
