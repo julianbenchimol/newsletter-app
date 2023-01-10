@@ -3,7 +3,7 @@ const {Emails} = require('../../models')
 
 
 //gets all emails 
-router.get('/emails', async (req, res)=>{
+router.get('/', async (req, res)=>{
     try{
         const emailData = await Emails.findAll();
         return res.json(emailData)
@@ -14,7 +14,7 @@ router.get('/emails', async (req, res)=>{
 })
 
 //gets a specific email by ID
-router.get('/emails/:id', async (req, res)=>{
+router.get('/:id', async (req, res)=>{
     try {
         const emailData = await Emails.findByPk(req.params.id);
         return res.json(emailData)
@@ -25,7 +25,7 @@ router.get('/emails/:id', async (req, res)=>{
 })
 
 //adds a new email to the model
-router.post('/emails', async (req, res) =>{
+router.post('/', async (req, res) =>{
     try{
         Emails.create(req.body)
         .then((newEmail) =>{
@@ -38,7 +38,7 @@ router.post('/emails', async (req, res) =>{
 })
 
 //update a specific email by id
-router.put('/emails/:id', async (req, res)=>{
+router.put('/:id', async (req, res)=>{
     try{
         Emails.update(
             {
@@ -59,7 +59,7 @@ router.put('/emails/:id', async (req, res)=>{
 })
 
 //deletes an email from the model 
-router.delete('/emails/:id', (req, res)=>{
+router.delete('/:id', (req, res)=>{
     Emails.destroy({
         where: {
             id: req.params.id
