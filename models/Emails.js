@@ -15,22 +15,15 @@ Emails.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    date_created: {
-      type: DataTypes.DATE,
+    email: {
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      unique: true,
+      validate: {
+        isEmail: true,
+      }
     },
-    font: {
-      type: DataTypes.STRING
     },
-    header_image: {
-      type: DataTypes.BOOLEAN
-    },
-    // html link to video
-    link: {
-      type: DataTypes.STRING
-    },
-  },
   {
     // Link to database connection
     sequelize: sequelize,
