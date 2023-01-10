@@ -8,13 +8,16 @@ newsLetter.init(
   // Define fields/columns on model
   // An `id` is automatically created by Sequelize, though best practice would be to define the primary key ourselves
   {
-    email: {
+    subject: {
       type: DataTypes.STRING
     },
-    first_name: {
+    title: {
       type: DataTypes.STRING
     },
-    last_name: {
+    message: {
+      type: DataTypes.STRING
+    },
+    headerImg: {
       type: DataTypes.STRING
     }
   },
