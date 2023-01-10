@@ -1,30 +1,62 @@
-<h2>Complete each field then click submit to send your newsletter!</h2>
-<form>
-    <input type="email" id="emailTo" name="emailTo" placeholder="To..">
-    <input type="text" id="subject" name="subject" placeholder="Subject">
-    <input type="text" id="messageText" name="messageText" placeholder="Newsletter content">
-    <input type="image" id="imageSrc" name="imageSrc" placeholder="Optional images">
-    <button type="submit" id="submitForm">Inform my constituents!</button>
-</form>
+<div class="col" style="margin: auto;
+                      color:rgb(255, 184, 3); 
+                      font-size: 1rem; 
+                      text-align: center; 
+                      font-weight: bold;
+                      font-family: 'Nunito Sans', sans-serif;
+                      text-shadow: 2px 2px black;">
+  <h1><strong>Create a Newsletter!</strong></h1>
+  <p>Complete each field and click the save button to send and save:</p>
+  <form>
+    <div class="mb-3">
+      {{!-- <label for="subject" class="form-label">Subject</label> --}}
+      <input
+        type="text"
+        class="form-control"
+        id="subject"
+        aria-describedby="subject"
+        name="subject"
+        placeholder="Subject"
+      />
+    </div>
 
 
+    <div class="mb-3">
+      {{!-- <label for="title" class="form-label">Newsletter Headline</label> --}}
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        placeholder="Write what your want your headline to say here"
+      />
+    </div>
 
-<div class="col">
-    <h2>Complete each field then click submit to send your newsletter!</h2>
-    <form>
-      <div class="mb-3">
-        <label for="emailTo" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="emailTo" aria-describedby="emailHelp" name="emailTo" placeholder="To..">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <div class="mb-3">
+      {{!-- <label for="message" class="form-label">Newsletter Content</label> --}}
+      <textarea
+        type="text"
+        class="form-control"
+        id="message"
+        placeholder="Write your content here"
+        rows="10"
+      ></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="p-3" for="headerImgMenu">Pick a header image for your
+        newsletter</label>
+      <select name="headerImgMenu" id="headerImgMenu">
+      <option value="None">No Header Image</option>
+      <option value="Purple Palms">Purple Palms</option>
+      <option value="Misty Mountains">Misty Mountains</option>
+      <option value="Urban Legends">Urban Legends</option>
+      <option value="Calm Countryside">Calm Countryside</option>
+      
+      </select>
+    </div>
+<div class="mb-3">
+    <button type="submit" class="btn btn-primary" id="saveNL">Save</button>
+    <button type="submit" class="btn btn-danger" id="back">Cancel</button>
   </div>
+  </form>
+</div>

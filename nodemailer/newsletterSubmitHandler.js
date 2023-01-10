@@ -1,5 +1,5 @@
-const emailTo = document.getElementById("emailTo").val().trim(); //require the array of recipients
-const emailFrom = document.getElementById("emailFrom").val().trim(); //user logged in
+// const emailTo = document.getElementById("emailTo").val().trim(); //require the array of recipients
+// const emailFrom = document.getElementById("emailFrom").val().trim(); //user logged in
 const subject = document.getElementById("subject").val().trim(); //user input
 const title = document.getElementById("title").val().trim(); //user input
 const message = document.getElementById("messageText").val().trim(); //user input
