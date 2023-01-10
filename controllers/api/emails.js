@@ -1,50 +1,74 @@
 const router = require('express').Router();
-//const {Emails} = require('../../models')
+const {Emails} = require('../../models')
 
 
 //gets all emails 
 router.get('/emails', async (req, res)=>{
     try{
-        //gets all emails from the model
+        const emailData = await Emails.findAll();
+        return res.json(emailData)
     }
     catch{
-        //catches any errors
+        res.status(400).json(err)
     }
 })
 
 //gets a specific email by ID
 router.get('/emails/:id', async (req, res)=>{
     try {
-        //gets the specific email from the model
+        const emailData = await Emails.findByPk(req.params.id);
+        return res.json(emailData)
     }
     catch{
-        //catches any errors
+        res.status(400).json(err)
     }
 })
 
 //adds a new email to the model
 router.post('/emails', async (req, res) =>{
     try{
-        //adds the data within the body to the model
+        Emails.create(req.body)
+        .then((newEmail) =>{
+            res.json(newEmail)
+        })
     }
     catch{
-        //catches any errors
+        res.status(400).json(err)
     }
 })
 
 //update a specific email by id
 router.put('/emails/:id', async (req, res)=>{
     try{
-        //update the model based on the req.body
+        Emails.update(
+            {
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
+        )
     }
     catch {
-        //catches any errors
+        res.status(400).json(err)
     }
 })
 
 //deletes an email from the model 
 router.delete('/emails/:id', (req, res)=>{
-    
+    Emails.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then((deletedEmail) =>{
+        res.json(deletedEmail)
+    })
+    .catch((err) =>res.status(400).json(err))
 })
 
 module.exports = router;
