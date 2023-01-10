@@ -1,15 +1,52 @@
 // const emailTo = document.getElementById("emailTo").val().trim(); //require the array of recipients
 // const emailFrom = document.getElementById("emailFrom").val().trim(); //user logged in
-const subject = document.getElementById("subject").val().trim(); //user input
-const title = document.getElementById("title").val().trim(); //user input
-const message = document.getElementById("messageText").val().trim(); //user input
-const imageSrc = document.getElementById("imageSrc"); //user input
-const submitBtn = document.getElementById("submitForm");
+function submitForm(event) {
+  event.preventDefault();
 
-function writeNewsletter() {
+const subject = document.getElementById("subject").value.trim(); //user input
+const title = document.getElementById("title").value.trim(); //user input
+const message = document.getElementById("messageText").value.trim(); //user input
+const image = document.getElementById("headerImgMenu").value; //user input
+const saveBtn = document.getElementById("saveBtn");
+const cancelBtn = document.getElementById("cancelBtn");
 
-   const newsletterHTML = 
-   `<!DOCTYPE html>
+function checkImg() {
+  if (subject && title && message) {
+    if (image !== "None") {
+      if (image == "Purple Palms") {
+        const imgSrc =
+          "https://binaryfortressdownloads.com/Download/WPF/Images/18188/WallpaperFusion-palm-trees-on-the-beach-1680x480.jpg";
+        return imgSrc;
+      } else if (image == "Misty Mountains") {
+        const imgSrc = "https://wallpapercave.com/wp/DOZLLYi.jpg";
+        return imgSrc;
+      } else if (image == "Urban Legends") {
+        const imgSrc = "https://avante.biz/wp-content/uploads/Urban-Wallpaper/Urban-Wallpaper-003.jpg";
+        return imgSrc;
+      } else if (image == "Calm Countryside") {
+        const imgSrc = "https://coolwallpapers.me/picsup/3101636-calm_clouds_countryside_dawn_dusk_field_grass_idyllic_light_morning_nature_peaceful_quiet_scenic_sky_summer_sun_sunrise_sunset_tranquil_travel_trees.jpg";
+        return imgSrc;
+      }
+
+      const imageHTML = `<img
+src="${imgSrc}" 
+class="d-flex"
+style="margin: auto; max-width: 100%;"
+/>`;
+      return imageHTML;
+    } else {
+      const imageHTML = `<br/>`;
+      return imageHTML;
+    }
+  }
+  return imageHTML;
+}
+
+function writeHTML() {
+
+  checkImg();
+
+  const newsletterHTML = `<!DOCTYPE html>
    <html lang="en">
      <head>
        <meta charset="UTF-8" />
@@ -21,7 +58,7 @@ function writeNewsletter() {
          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
          crossorigin="anonymous"
        />
-       <title>Newsletter Preview</title>
+       <title>${title}</title>
      </head>
      <body
        class="p-1 m-2 align-items-center"
@@ -33,9 +70,8 @@ function writeNewsletter() {
          style="top: 0; flex-direction: column; max-width: 99vw; border-bottom: 5px solid rgb(123, 121, 121); border-radius: 0px 200px;background-color: rgb(255, 236, 172); color: rgb(34, 33, 33)"
        >
          <div style="padding-left: 100px;">
-           <p>To: <span>{{user.mailingList}}</span> </p>
-           <p>From: <span>{{user.email}}</span></p>
-           <p>Subject: <span>{{newsletter.subject}}</span></p>
+           <p>To: <span>My Subscribers</span></p>
+           <p>Subject: <span>${subject}</span></p>
          </div>
        </header>
        <main
@@ -43,22 +79,18 @@ function writeNewsletter() {
          style="margin-top: 20px; max-width: 80vw; background-color: rgb(156, 202, 255); min-height: 70vh;"
        >
    
-         <img
-           src="http://wonderfulengineering.com/wp-content/uploads/2014/05/twitter-header-photo-14.jpg"
-           class="d-flex"
-           style="margin: auto; max-width: 100%;"
-         />
+         ${imageHTML}
          <div
            class="p-4"
            style="margin: auto; background-color:rgb(218, 225, 255); text-align: center; max-width: 100%;"
          >
-           <h2>{{newsletter.title}}</h2>
+           <h2>${title}</h2>
          </div>
          <br />
          <div
            style="padding: 50px; margin: auto; display: flex; flex-direction: column;"
          >
-           <p>{{newsletter.content}}</p>
+           <p>${message}</p>
          </div>
        </main>
        <footer>
@@ -80,16 +112,33 @@ function writeNewsletter() {
      </body>
    </html>`;
 
-    console.log(newsletter);
-}
-
-function submitForm(event) {
-    event.preventDefault();
-
-    writeNewsletter();
+  console.log(newsletterHTML);
+  return newsletterHTML;
 
 }
 
-submitBtn.onclick(submitForm);
+  writeHTML();
+  const savedNewsletter = new Newsletter(subject, title, message, image, newsletterHTML);
 
+  const response = await fetch('/api/newsletter/saved', {
+    method: 'POST',
+    body: JSON.stringify({
+      subject,
+      title,
+      message,
+      image,
+      newsletterHTML
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  });
 
+  if(response.ok){
+    document.location.replace('/');
+  } else {
+    alert('Could not save newsletter. Please try again.')
+  }
+}
+
+saveBtn.onclick(submitForm);
