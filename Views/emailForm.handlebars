@@ -1,0 +1,38 @@
+<body>
+    <div class="Container">
+
+        <!-- div is the pop up -->
+        <div class="popup" id="popup">
+
+            <h2>Email List</h2>
+            <p> Type in any additional emails below, that you would like to send a newsletter to.</p>
+            <form>
+
+
+                <textarea name="message"></textarea>
+
+
+                <input type="submit">
+
+
+            </form>
+            <ul>
+                <li></li>
+            </ul>
+            <button type="button" onclick="closePopup">Back</button>
+        </div>
+    </div>
+
+    <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+        function closePopup() {
+            popup.classList.remove("open-popup");
+        }
+    </script>
+
+
+</body>
