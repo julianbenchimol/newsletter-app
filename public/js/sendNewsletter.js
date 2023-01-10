@@ -10,7 +10,7 @@
     // {
           
     function sendMail() {
-        const emailList = ["john.ifert.miller@gmail.com", "legendary6615@gmail.com"];
+        const emailList = ["john.ifert.miller@gmail.com", "legendary6615@gmail.com", "jbenchimol1999@gmail.com"];
     for (let index = 0; index < emailList.length; index++) {
         // set to variable
     const email = emailList[index];
