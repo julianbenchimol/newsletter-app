@@ -1,5 +1,6 @@
 const sequelize = require('../config/connection')
-const User = require('../models/User')
+const User = require('../models/User');
+const seedEmails = require('./emails');
 const userData = require('./userData.json');
 
 const seedDatabase = async ()=>{
@@ -9,7 +10,8 @@ const seedDatabase = async ()=>{
     individualHooks: true,
     returning: true
   });
-
+  await seedEmails();
+  console.log('\n----- Emails Seeded -----\n');
   process.exit(0)
 }
 

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User} = require('../models');
+const {User, Emails} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async(req, res)=>{
@@ -20,5 +20,21 @@ router.get('/login', (req, res)=>{
 
     res.render('login')
 })
+// Search route
+// router.get("/grabEmails", async (req, res) => {
+//     try {
+//       const grabEmails = await Emails.findAll({});
+//       const Emails = grabEmails.map((Emails) =>
+//       Emails.get({ plain: true })
+//     );
+// {
+//         res.redirect("/", {
+//             Emails,
+//         });
+//       }
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
 module.exports = router
