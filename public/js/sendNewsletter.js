@@ -21,6 +21,7 @@
       message: "test"
       };
       emailjs.send( 'service_oqqo64j', 'template_7rezunv', params).then(function (res) {});
+      alert('Emails sent!')
     } else {
       alert('Failed to send email!')
     }
