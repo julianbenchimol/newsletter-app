@@ -1,8 +1,8 @@
 // const emailTo = document.getElementById("emailTo").val().trim(); //require the array of recipients
 // const emailFrom = document.getElementById("emailFrom").val().trim(); //user logged in
-function submitForm(event) {
+async function submitForm(event) {
   event.preventDefault();
-const newsletter = require('../models/Newsletter.js');
+const newsletter = require('../models/');
 const subject = document.getElementById("subject").value.trim(); //user input
 const title = document.getElementById("title").value.trim(); //user input
 const message = document.getElementById("messageText").value.trim(); //user input
@@ -121,8 +121,11 @@ function writeHTML() {
   const response = await fetch('/api/newsletter/saved', {
     method: 'POST',
     body: JSON.stringify({
+      subject,
       title,
-      message
+      message,
+      headerImg,
+      html
     }),
     headers: {
       'Content-Type': 'application/json'
