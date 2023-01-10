@@ -2,13 +2,12 @@
 // const emailFrom = document.getElementById("emailFrom").val().trim(); //user logged in
 function submitForm(event) {
   event.preventDefault();
-
+const newsletter = require('../models/Newsletter.js');
 const subject = document.getElementById("subject").value.trim(); //user input
 const title = document.getElementById("title").value.trim(); //user input
 const message = document.getElementById("messageText").value.trim(); //user input
 const image = document.getElementById("headerImgMenu").value; //user input
-const saveBtn = document.getElementById("saveBtn");
-const cancelBtn = document.getElementById("cancelBtn");
+
 
 function checkImg() {
   if (subject && title && message) {
@@ -118,16 +117,12 @@ function writeHTML() {
 }
 
   writeHTML();
-  const savedNewsletter = new Newsletter(subject, title, message, image, newsletterHTML);
 
   const response = await fetch('/api/newsletter/saved', {
     method: 'POST',
     body: JSON.stringify({
-      subject,
       title,
-      message,
-      image,
-      newsletterHTML
+      message
     }),
     headers: {
       'Content-Type': 'application/json'
@@ -141,4 +136,9 @@ function writeHTML() {
   }
 }
 
+const saveBtn = document.getElementById("saveBtn");
 saveBtn.onclick(submitForm);
+
+const cancelBtn = document.getElementById("cancelBtn");
+cancelBtn.onclick();
+
