@@ -71,4 +71,27 @@ router.delete('/:id', (req, res)=>{
     .catch((err) =>res.status(400).json(err))
 })
 
+// async function newFormHandler(event) {
+//     event.preventDefault();
+//     const firstName = document.querySelector('#firstName').value;
+//     const lastName = document.querySelector("#lastName").value;
+//     const email = document.querySelector("#email").value;
+//         method: 'POST',
+//         body: JSON.stringify({
+//             firstName,
+//             lastName,
+//             email,
+//         })
+//         headers:{
+//             'content-Type': 'application/json',
+//         },
+// });
+// if (response.ok){
+//     document.location.replace('/');
+// }else{
+//     alert('failed to add');
+//  }
+// }
+// document.querySelector('.new-email-form').addEventListener('submit', newFormHandler);
+
 module.exports = router;
