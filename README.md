@@ -4,27 +4,17 @@
 
 An app that allows users to dynamically create a newsletter, and input emails for recipients for the app to send out to.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+No steps to install! Just visit the website to use.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+1. Users log in to their account when reaching the homepage.
+2. Then, click the 'Create Newsletter' button to pull up the newsletter form.
+3. Fill out the form and click 'Update Contacts' to make sure their contact list is up to date
+    3a. Within the contact update form, users can add and remove contacts that they want to send the list to.
+4. Once the contact list is up to date, click 'Send Newsletter' button to send the newsletter!
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
@@ -33,6 +23,11 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
     ```
 
 ## Credits
+
+[David Parker](https://github.com/DavidParker42)
+[Joe Labadia](https://github.com/Sephadeus)
+[Julian Benchimol](https://github.com/julianbenchimol)
+[John Ifert](https://github.com/johnboy514)
 
 List your collaborators, if any, with links to their GitHub profiles.
 
