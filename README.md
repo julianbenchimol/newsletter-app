@@ -1,5 +1,5 @@
 # Newsletter App
-
+![newsletter-app](https://user-images.githubusercontent.com/90430093/212781802-3e498369-7ec0-4d3c-9729-12bd9a968c01.jpg)
 ## Description
 
 An app that allows users to dynamically create a newsletter, and input emails for recipients for the app to send out to.
