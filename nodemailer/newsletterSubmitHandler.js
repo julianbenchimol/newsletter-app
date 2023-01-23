@@ -61,22 +61,19 @@ function writeHTML() {
      </head>
      <body
        class="p-1 m-2 align-items-center"
-       style="background-color: rgb(0, 13, 73)"
+       style="background-color: rgb(248, 238, 215)"
      >
        <header
          id="header"
          class="d-flex p-3 m-auto"
          style="top: 0; flex-direction: column; max-width: 99vw; border-bottom: 5px solid rgb(123, 121, 121); border-radius: 0px 200px;background-color: rgb(255, 236, 172); color: rgb(34, 33, 33)"
        >
-         <div style="padding-left: 100px;">
-           <p>To: <span>My Subscribers</span></p>
-           <p>Subject: <span>${subject}</span></p>
-         </div>
+    
        </header>
-       <main
-         class="p-3 mx-auto rounded-1"
-         style="margin-top: 20px; max-width: 80vw; background-color: rgb(156, 202, 255); min-height: 70vh;"
-       >
+
+       <header id="header" class="d-flex p-3 m-auto">
+       </header>
+       <main class="p-3 mx-auto rounded-1" style="margin-top: 20px; max-width: 80vw; background-color: rgb(230, 230, 230); min-height: 70vh;">
    
          ${imageHTML}
          <div

@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, NOW } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Create a new Sequelize model for newsLetter
@@ -19,6 +19,12 @@ newsLetter.init(
     },
     headerImg: {
       type: DataTypes.STRING
+    },
+    html: {
+      type: DataTypes.STRING
+    }
+    date_created: {
+      type: DataTypes.DATE(NOW);
     }
   },
   {
